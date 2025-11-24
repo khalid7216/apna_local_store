@@ -5,10 +5,10 @@ function Banner() {
     'https://images.unsplash.com/photo-1513094735237-8f2714d57c13?q=80&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
    
     'https://images.unsplash.com/photo-1758520388397-bf53b6e11bba?q=80&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1758520387575-9d72f7a3e4c5?q=80&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1758520388397-bf53b6e11bba?q=80&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     
     // Placeholder ko bhi standard size par rakha
-    'https://via.placeholder.com/1032x581/F4FF33/000000?text=Banner+4' 
+    'https://images.unsplash.com/photo-1758520388397-bf53b6e11bba?q=80&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' 
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
