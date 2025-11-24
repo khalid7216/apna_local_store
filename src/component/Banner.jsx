@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 function Banner() {
   const images = [
-    'https://via.placeholder.com/1200x400/FF5733/FFFFFF?text=Banner+1',
-    'https://via.placeholder.com/1200x400/33FF57/FFFFFF?text=Banner+2',
-    'https://via.placeholder.com/1200x400/3357FF/FFFFFF?text=Banner+3',
-    'https://via.placeholder.com/1200x400/F4FF33/000000?text=Banner+4'
+    'https://images.unsplash.com/photo-1513094735237-8f2714d57c13?q=80&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+   
+    'https://images.unsplash.com/photo-1758520388397-bf53b6e11bba?q=80&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1758520387575-9d72f7a3e4c5?q=80&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8fHx8fA%3D%3D',
+    
+    // Placeholder ko bhi standard size par rakha
+    'https://via.placeholder.com/1032x581/F4FF33/000000?text=Banner+4' 
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,9 +18,9 @@ function Banner() {
       setCurrentIndex((prevIndex) => 
         (prevIndex === images.length - 1 ? 0 : prevIndex + 1)
       );
-    }, 5000); // 5 seconds mein image change hogi
+    }, 5000); 
 
-    return () => clearInterval(interval); // Component unmount hone par interval clear karein
+    return () => clearInterval(interval); 
   }, [images.length]);
 
   const goToPrev = () => {
@@ -33,23 +36,25 @@ function Banner() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden mt-4 mb-8">
       <div 
         className="flex transition-transform ease-out duration-500" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image, index) => (
-          <div key={index} className="w-full flex-shrink-0">
+          // Parent div mein bg-color lagaya taaki khali space fill ho jaaye
+          <div key={index} className="w-full flex-shrink-0 bg-gray-900"> 
             <img 
               src={image} 
               alt={`Banner ${index + 1}`} 
-              className="w-full h-48 md:h-80 lg:h-96 object-cover" 
+              // FIX: object-contain lagaya (No Cutting) aur height ko behtar set kiya.
+              className="w-full h-48 md:h-64 lg:h-80 object-contain" 
             />
           </div>
         ))}
       </div>
 
-      {/* Navigation Buttons (Prev/Next) */}
+      {/* Navigation Buttons */}
       <button 
         onClick={goToPrev} 
         className="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-colors focus:outline-none"
