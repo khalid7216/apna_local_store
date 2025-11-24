@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from "./component/Navbar.jsx";
+import Navbar from "./component/Navbar";
 import Banner from "./component/Banner";
 
 export default function App() {
